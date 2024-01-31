@@ -1,32 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+:root{
+  --black:var(--bg);
+  --bg:#010103;
+  --border:.1rem solid rgba(255,255,255,.3);
+  --main_color:#80FF44;
+}
+body{
+  background: var(--bg);
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
+    transition: .2s linear;  
 }
 header {
     position: fixed;
     top: 0;
     left: 0;
+    right:0;
     width: 100%;
     padding: 20px 10px;
-    background: #0000;
+    border-bottom: var(--border);
+    background: var(--bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
 }
 .logo {
     font-size: 25px;
-    color: #80FF44  ;
+    color: var(--main_color);
     text-decoration: none;
     font-weight: 600;
 }
 nav a {
-    font-size: 18px;
+
+    font-size: 1rem;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
@@ -35,14 +48,16 @@ nav a {
 }
 nav a:hover,
 nav a.active {
-    color: #80FF44;
+    color: var(--main_color);
+    border-bottom: .1rem solid var(--main_color);
+    padding-bottom: .5rem;
 }
 .home{
     min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #000;
+    background: var(--bg);
     font-size: 100px;
     color: #fff;
     font-weight: 700;
@@ -75,7 +90,7 @@ nav a.active {
     font-weight: 600;
   }
   .home-caption {
-    color: #80FF44;
+    color: var(--main_color);
     position: relative;
     padding-left:30px;
     padding-top: 15px;
@@ -103,10 +118,11 @@ nav a.active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #000;
+    background: var(--bg);
     font-size: 100px;
     color: #fff;
     font-weight: 700;
+    overflow-x:hidden;
 }
   .news-content {
     gap: 80 px;
@@ -177,7 +193,7 @@ nav a.active {
     display: flex;
     justify-content: end;
     align-items: center;
-    background: #000;
+    background: var(--bg);
     font-size: 100px;
     color: #fff;
     font-weight: 700;
@@ -207,8 +223,8 @@ nav a.active {
    font-weight: 600;
   }
   .lawyers-image01 {
-    top: 70 px;
-    right: 900px;
+    top: 0 px;
+    right: 450px;
     width: 600px;
     height:600px;
     margin: auto;
@@ -251,7 +267,7 @@ nav a.active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #000;
+    background: var(--bg);
     font-size: 100px;
     color: #fff;
     font-weight: 700;
@@ -320,7 +336,7 @@ nav a.active {
   }
 
   .footer{
-    background:#000;
+    background: var(--bg);
     padding:30px 0px;
     font-family: 'Play', sans-serif;
     text-align:center;
@@ -330,7 +346,7 @@ nav a.active {
     width:100%;
     margin:1% 0%;
     padding:0.6% 0%;
-    color:#80FF44;
+    color:var(--main_color);
     font-size:1.2em;
     }
     
@@ -372,3 +388,4 @@ nav a.active {
     margin:0% 3%;
     }
     }
+    

@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
-
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="home.js"></script>
     <title>Legal Hub</title>
 </head>
 
 <body>
     <header>
         <a href="#" class="logo">Legal Hub</a>
-        <nav>
+        <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#News Hub">Daily Eagle</a>
             <a href="#Lawyers for hire">Better call Saul</a>
@@ -82,7 +82,7 @@
      <div class="lawyers-image01">
         <img
           src="E:\sem 4 shiz\dbms lab\LegalHubRedesigned\LegalHub_2.0\logos\saul_logo_nobg.png"
-          class="news-image01"
+          class="lawyers-image01"
         />
      </div>
     
@@ -138,8 +138,26 @@
      
 
     </section>
-    <script src="home.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src=".js"></script>
+    <script>
+      ScrollReveal(
+        {
+          reset:true,
+          duration:1000,
+          distance:'1500px'
+        }
+      );
+      ScrollReveal().reveal('.home-content',{origin:'top',distance:'500px'});
+      ScrollReveal().reveal('.home-image01',{origin:'top',distance:'200px'});
+      ScrollReveal().reveal('.news-content',{origin:'left'});
+      ScrollReveal().reveal('.news-image01',{origin:'right'});
+      ScrollReveal().reveal('.lawyers-content',{origin:'right'});
+      ScrollReveal().reveal('.lawyers-image01',{origin:'left'});
+      ScrollReveal().reveal('.doc-content',{origin:'left'});
+      ScrollReveal().reveal('.doc-image01',{origin:'right'});
+      ScrollReveal().reveal('.row',{origin:'bottom',distance:'500px'});
+     
+    </script>
+    
+    
 </body>
 </html>
