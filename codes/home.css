@@ -8,6 +8,7 @@
 }
 body{
   background: var(--bg);
+  overflow-x: hidden;
 }
 * {
     margin: 0;
@@ -25,7 +26,7 @@ header {
     width: 100%;
     padding: 20px 10px;
     border-bottom: var(--border);
-    background: var(--bg);
+    background: #1b1b1b;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,8 +35,34 @@ header {
 .logo {
     font-size: 25px;
     color: var(--main_color);
+    text-shadow: 0 0 5px var(--main_color);
     text-decoration: none;
     font-weight: 600;
+}
+.login_btn{
+  background-size:200%;
+  transition: 0.2s;
+  color:var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-size: 200%;
+  transition: 0.6s;
+  background-image: linear-gradient(to left,#24FE41,#FDFC47,#24FE41);
+}
+.login_btn:hover{
+  background-position: right;
+
+}
+.active{
+  color: var(--main_color);
 }
 nav a {
 
@@ -49,8 +76,12 @@ nav a {
 nav a:hover,
 nav a.active {
     color: var(--main_color);
-    border-bottom: .1rem solid var(--main_color);
+    text-shadow: 0 0 5px var(--main_color);
+    transition-delay: 1ms;
     padding-bottom: .5rem;
+}
+nav a:nth-child(5):hover{
+  color:var(--black)
 }
 .home{
     min-height: 100vh;
@@ -352,12 +383,14 @@ nav a.active {
     
     .footer .row a{
     text-decoration:none;
-    color:gray;
+    color:#fff;
     transition:0.5s;
     }
     
     .footer .row a:hover{
-    color:#fff;
+      color: var(--main_color);
+      text-shadow: 0 0 5px var(--main_color);
+      transition-delay: 1ms;
     }
     
     .footer .row ul{
@@ -387,5 +420,4 @@ nav a.active {
     .footer .row a i{
     margin:0% 3%;
     }
-    }
-    
+    } 
