@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=isocpeurregular:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=isocpeurregular:wght@300&display=swap');
 :root{
   --black:var(--bg);
   --bg:#010103;
@@ -15,7 +15,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'isocpeurregular', sans-serif;
     transition: .2s linear;  
 }
 header {
@@ -44,7 +44,7 @@ header {
   transition: 0.2s;
   color:var(--black);
   padding: 0.5rem 1rem;
-  font-size: 1em;
+  font-size: 1.3rem;
   border: none;
   outline: none;
   border-radius: 10px;
@@ -66,7 +66,7 @@ header {
 }
 nav a {
 
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
@@ -113,10 +113,10 @@ nav a:nth-child(5):hover{
 .home-heading {
     color: rgb(255, 255, 255);
     position: relative;
-    left:80px;
+    left:25px;
     font-size: 64px;
     font-style: normal;
-    font-family: Poppins;
+    font-family: isocpeurregular;
     line-height: 80px;
     font-weight: 600;
   }
@@ -126,15 +126,15 @@ nav a:nth-child(5):hover{
     padding-left:30px;
     padding-top: 15px;
     font-size: 30px;
-    font-family: Poppins;
+    font-family: isocpeurregular;
     line-height: 30px;
     font-weight: 500;
   }
   .home-image01 {
     right: 0px;
-    bottom:50px;
+    bottom:0px;
     width: 600px;
-    height:200px;
+    height:500px;
     margin: auto;
     display: flex;
     position: relative;
@@ -175,7 +175,7 @@ nav a:nth-child(5):hover{
     color: rgb(255, 255, 255);
     font-size: 64px;
     font-style: normal;
-    font-family: Poppins;
+    font-family: isocpeurregular;
     line-height: 80px;
     font-weight: 600;
   }
@@ -202,7 +202,7 @@ nav a:nth-child(5):hover{
     padding: 24px;
     width: 220px;
     font-weight:800;
-    font-family: "Poppins",sans-serif;
+    font-family: "isocpeurregular",sans-serif;
     font-size: 20px;
     border-radius: 6px;
     cursor: pointer;
@@ -249,7 +249,7 @@ nav a:nth-child(5):hover{
    color: rgb(255, 255, 255);
    font-size: 64px;
    font-style: normal;
-   font-family: Poppins;
+   font-family: isocpeurregular;
    line-height: 80px;
    font-weight: 600;
   }
@@ -277,7 +277,7 @@ nav a:nth-child(5):hover{
     padding: 24px;
     width: 220px;
     font-weight:800;
-    font-family: "Poppins",sans-serif;
+    font-family: "isocpeurregular",sans-serif;
     font-size: 20px;
     border-radius: 6px;
     cursor: pointer;
@@ -323,7 +323,7 @@ nav a:nth-child(5):hover{
     color: rgb(255, 255, 255);
     font-size: 64px;
     font-style: normal;
-    font-family: Poppins;
+    font-family: isocpeurregular;
     line-height: 80px;
     font-weight: 600;
   }
@@ -350,7 +350,7 @@ nav a:nth-child(5):hover{
     padding: 24px;
     width: 220px;
     font-weight:800;
-    font-family: "Poppins",sans-serif;
+    font-family: "isocpeurregular",sans-serif;
     font-size: 20px;
     border-radius: 6px;
     cursor: pointer;
@@ -378,7 +378,7 @@ nav a:nth-child(5):hover{
     margin:1% 0%;
     padding:0.6% 0%;
     color:var(--main_color);
-    font-size:1.2em;
+    font-size:1.625rem;
     }
     
     .footer .row a{
