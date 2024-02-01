@@ -182,8 +182,8 @@ nav a:nth-child(5):hover{
   .news-image01 {
     top: 0px;
     right: 0px;
-    width: 400px;
-    height:400px;
+    width: 350px;
+    height:350px;
     margin: auto;
     display: flex;
     position: relative;
@@ -244,8 +244,8 @@ nav a:nth-child(5):hover{
     flex-direction: column;
   }
 .lawyers-heading {
-   position: relative;
-   right:100px; 
+   position:relative;
+   left:750px;
    color: rgb(255, 255, 255);
    font-size: 64px;
    font-style: normal;
@@ -254,13 +254,13 @@ nav a:nth-child(5):hover{
    font-weight: 600;
   }
   .lawyers-image01 {
-    top: 0 px;
-    right: 450px;
-    width: 600px;
-    height:600px;
+    bottom: 40px;
+    right:420px;
+    width: 350px;
+    height:350px;
     margin: auto;
     display: flex;
-    position: absolute;
+    position: relative;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
@@ -269,7 +269,7 @@ nav a:nth-child(5):hover{
   .lbtn_container{
     position: relative;
     bottom: 40px;
-    left: 405px;
+    left: 1250px;
   }
   .lbtn{
     border: none;
@@ -330,8 +330,8 @@ nav a:nth-child(5):hover{
   .doc-image01 {
     top: 0px;
     right: 0px;
-    width: 600px;
-    height:600px;
+    width: 300px;
+    height:300px;
     margin: auto;
     display: flex;
     position: relative;
