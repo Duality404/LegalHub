@@ -23,7 +23,14 @@
             <a href="#News_Hub">Daily Eagle</a>
             <a href="#Lawyers_for_hire">Better call Saul</a>
             <a href="#Legal_Doc_Templates">Legal Doc Templates</a>
+            <?php
+            if(isset($_GET['id']))
+            {}else{
+            ?>
             <a href="index.php"class="login_btn">Login</a>  
+            <?php
+        }
+        ?>
         </nav>
         
     </header>
@@ -42,10 +49,7 @@
             </main>
          </div>
          <div class="home-image01">
-            <img
-              src="C:\xampp\htdocs\LegalHub_2.0\logos\home_image2.png"
-              class="home-image01"
-            />
+         <img src="home_image.png" alt="Girl in a jacket" width="500" height="600">
          </div>
     </section>
 
@@ -62,10 +66,8 @@
         </main>
      </div>
      <div class="news-image01">
-        <img
-          src="C:\xampp\htdocs\LegalHub_2.0\logos\daily_eagle_logo_nobg.png"
-          class="news-image01"
-        />
+        <img src="daily_eagle_logo_nobg.png" alt="Girl in a jacket" width="500" height="600">
+         </div>
      </div>
 
     </section>
@@ -82,11 +84,9 @@
         </main>
      </div>
      <div class="lawyers-image01">
-        <img
-          src="C:\xampp\htdocs\LegalHub_2.0\logos\saul_logo_nobg.png"
-          class="lawyers-image01"
-        />
+     <img src="daily_eagle_withbg.png" alt="Girl in a jacket" width="100" height="100">
      </div>
+
     
     </section>
      

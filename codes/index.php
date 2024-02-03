@@ -124,7 +124,7 @@
         //   $_SESSION['email'] = $user['email'];
         ?>x
 
-    <script>window.location="homeindex.html?id=$user[id]";</script>
+    <script>window.location="home.php?id=$user[id]";</script>
     ?><?php
         } else {
           echo "<p>Invalid password.</p>";
