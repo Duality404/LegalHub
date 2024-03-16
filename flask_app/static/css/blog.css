@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=isocpeurregular:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=isocpeurregular:wght@300&display=swap');
+:root{
+  --black:var(--bg);
+  --bg:#010103;
+  --border:.1rem solid rgba(255,255,255,.3);
+  --main_color:#80FF44;
+}
+
+body{
+    font-family: 'isocpeurregular', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: var(--bg);
+    font-size:0.9 rem;
+}

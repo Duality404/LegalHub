@@ -8,7 +8,7 @@
 }
 body{
   background: var(--bg);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 * {
     margin: 0;

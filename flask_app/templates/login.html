@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Login and Registration form</title>
+    <link rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/login.css' )}}">
+</head>
+<body>
+    <div class = "container">
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <form id="signinform" action="/login" method = "POST">
+            <h2>Login</h2>
+            <div class = "inputBox">
+                <input name="username" id="username" type = "text" placeholder="Username" required>
+            </div>
+
+            <div class = "inputBox">
+                <input name="password" id="password" type = "password" placeholder="Password" required>
+            </div>
+
+            {% with messages = message %}
+                {% if messages %}
+                    <ul class=flashes style = "list-style: none;">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+            <div class = "inputBox group" style="display: flex; gap: 10px;">
+                <a href="#">Forgot Password? </a>
+                <a href="/signup" id="signup">Signup</a>
+            </div>
+
+            <div class = "inputBox">
+                <input type = "submit" value="Sign in">
+            </div>  
+        </form>
+        
+</body>
+</html>
