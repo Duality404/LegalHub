@@ -12,28 +12,36 @@
         <span></span>
         <span></span>
         
-        <form id="signupform">
+        <form id="signupform" action="/signup" method="POST">
             <h2>Registration</h2>
             <div class = "inputBox">
-                <input type = "text" placeholder="Username" required>
+                <input type = "text" name="username" id="username" placeholder="Username" required>
             </div>
 
             <div class = "inputBox">
-                <input type = "text" placeholder="First Name" required>
+                <input type = "text" name="fname" id="fname" placeholder="First Name" required>
             </div>
 
             <div class = "inputBox">
-                <input type = "text" placeholder="Last Name" required>
+                <input type = "text"  name="lname" id="lname" placeholder="Last Name" required>
             </div>
 
             <div class = "inputBox">
-                <input type = "text" placeholder="Email Address" required>
+                <input type = "text" name="email" id="email" placeholder="Email Address" required>
             </div>
 
             <div class = "inputBox">
-                <input type = "password" placeholder="Password" required>
+                <input type = "password" name="password" id="password" placeholder="Password" required>
             </div>
-
+            {% with messages = message %}
+                {% if messages %}
+                    <ul class=flashes style = "list-style: none;">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
             
 
             <div class = "inputBox">
