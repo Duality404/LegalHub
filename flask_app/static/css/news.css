@@ -189,7 +189,7 @@ img
 .featured_info{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    
     flex-wrap: wrap;
     overflow: hidden;
     width: 390px;
@@ -210,10 +210,18 @@ img
     transition: filter 500ms ease;
 }
 
+.author
+{
+    display : flex;
+    
+    margin-top : 1.2rem;
+    color: #80FF44;
+    font-size: 1.1rem;
+}
 .date
 {
     display : flex;
-    gap : 1rem;
+    
     margin-top : 1.2rem;
     color: #80FF44;
     font-size: 1.1rem;
@@ -232,7 +240,7 @@ img
 .subsec{
     display:flex;
     flex-direction: column;
-    gap: 5px;
+    
     max-width: 400px !important;
     align-items: flex-start;
 }

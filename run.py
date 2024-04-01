@@ -1,22 +1,24 @@
 
+#from gevent import monkey 
+#monkey.patch_all()
+#from gevent.pywsgi import WSGIServer
 from flask_app import app
 from config import *
 import threading
 from time import sleep
-from news import get_url, get_url_data
+from news import *
+from flask_app.database import connection
 
-# def get_top_news():
-#     print("Getting urls")
-#     get_url()
-#     print("Url loaded..., loading url data")
-#     get_url_data()
-#     print("All data loaded and uploaded")
-#     time = 60*60*24
-#     print("Sleeping for a day")
-#     sleep(time)
+def get_top_news():
+    connection.execute('delete from top_stories')
+    print("Deleted the previous data")
+    get_url()
+    sleep(1000)
 
 app.config['SECRET_KEY'] = api_secret
 
 if __name__ == '__main__':
-    # update_top_news = threading.Thread(target=get_top_news).start()
-    app.run(debug = True, port=8000)
+    
+    update_top_news = threading.Thread(target=get_top_news).start()
+    app.run(debug = True,port=8000)
+    # WSGIServer(("127.0.0.1",8000),app,log=None).serve_forever()

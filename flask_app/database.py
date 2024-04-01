@@ -21,8 +21,9 @@ class mysqlPool:
                 connection = mysql.connector.connect(user=self.user, host=self.host, port=self.port, password=self.password, database=self.dbName)
                 break
             except Exception as e:
-                
+                print("Exceptions : while connecting", e)
                 count += 1
+
         if count>= 5:
             return None
 

@@ -168,6 +168,7 @@ def news():
 
     page = request.args.get(get_page_parameter(), type=int, default=1)
     
-    pagination = Pagination(page=page, total=len(news_stories), search=search,per_page=5, record_name='news_stories')
+    
+    pagination = Pagination(page=page, total=len(news_stories), search=search,per_page=6, record_name='news_stories')
 
     return render_template('news.html', data={'name': name}, news = news_stories,pagination=pagination, page = page, per_page = 6)

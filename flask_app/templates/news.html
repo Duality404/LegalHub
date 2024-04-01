@@ -47,19 +47,23 @@
         {{ pagination.links }}
         <section class="subsections">
 
+            
             {% for x in news %}
                 {% if loop.index < page*per_page and loop.index >= (page-1) * per_page %}
                     <article class="subsec">
                         <div class="featured_thumbnail">
-                            <img src="{{x[1]}}" > 
+                            <img src="{{x[0]}}" > 
                         </div>
                         <div class="featured_info">
-                            <span class="featured_title">{{x[2]}}</span>
+                            <span class="featured_title">{{x[1]}}</span>
                             <span class ="featured_body">
-                                {{x[5]}}<a href = "{{x[6]}}"><b>  ...Read more</b></a>
+                                {{x[4]}}<a href = "{{x[5]}}"><b>  ...Read more</b></a>
                             </span>
+                            <div class="author">
+                                {{x[2]}}
+                            </div>
                             <div class="date">
-                                {{x[4]}}
+                                {{x[3]}}
                             </div>
                         </div>
                     </article>
