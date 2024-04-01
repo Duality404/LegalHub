@@ -4,6 +4,8 @@ from flask import get_flashed_messages, request, Blueprint, url_for, render_temp
 from .database import connection
 from functools import wraps
 from datetime import datetime, timedelta
+from flask import Blueprint
+from flask_paginate import Pagination, get_page_parameter
 
 main = Blueprint('main', __name__)
 
@@ -145,4 +147,27 @@ def logout():
 
 @main.route('/news')
 def news():
-    return render_template('news.html')
+    news_stories=connection.execute("select * from top_stories")
+    
+    user_id_cookie = request.cookies.get('user_id')
+    name=None
+    if user_id_cookie:
+     uidcookie=int(user_id_cookie)
+     username=connection.execute(f'SELECT username from users where userid= {uidcookie}')
+     if username:
+            name = username[0][0]
+     else:
+            redirect('/ logout')
+    else:
+        print("User is not logged in")
+
+    search = False
+    q = request.args.get('q')
+    if q:
+        search = True
+
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    
+    pagination = Pagination(page=page, total=len(news_stories), search=search,per_page=5, record_name='news_stories')
+
+    return render_template('news.html', data={'name': name}, news = news_stories,pagination=pagination, page = page, per_page = 6)
