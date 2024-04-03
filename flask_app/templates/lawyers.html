@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Better Call Saul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename='fonts/stylesheet.css' )}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/lawyers.css' )}}" />
+  </head>
+  <body>
+    <header>
+      {% if data.name %}
+      <a href="#" class="logo">Welcome {{data.name}}</a>
+      {% else %}
+      <a href="#" class="logo">Welcome Guest</a>
+      {% endif %}
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/news">Daily Eagle</a>
+            <a href="#Lawyers_for_hire"class="active">Better call Saul</a>
+            <a href="#Legal_Doc_Templates">Legal Doc Templates</a>
+            
+            {% if data.name %}
+            <a href="/logout"class="login_btn">Logout</a>  
+            {% else %}
+            <a href="/login"class="login_btn">Login</a>  
+            {% endif %}
+        </nav>
+    </header>
+    <div class="main">
+      <div class="jobs-list-container">
+        <input class="job-search" type="text" placeholder="Search here..." />
+        
+        <div class="jobs">
+          {% for x in lawyers %}
+            <div class="job">
+              {% set img_src = "assets/"+x[1]+".jpg" %} 
+              <img src="{{url_for('static', filename=img_src)}}">
+              <h3 class="job-title">{{x[1]}}</h3>
+              <div class="details">
+                <h3 class="job-specialization">{{x[2]}}</h3>
+                <h3 class="job-experience">{{x[3]}} of Experience</h3>
+                <h3 class="job-email">Email: {{x[4]}}</h3>
+                <h3 class="job-phone">Contact number: {{x[5]}}</h3>
+                <h3 class="job-fee">Consultation Fee: {{x[9]}} inr</h3>
+              </div>
+              <a class="details-btn" href="/resume/{{x[0]}}">More details</a>
+              <span class="open-positions">Free to hire</span>
+              </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+    <script src="{{url_for('static', filename='js/lawyers.js')}}"></script>
+  </body>
+</html>

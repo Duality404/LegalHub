@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- divinectorweb.com -->
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='fonts/stylesheet.css' )}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/resume.css' )}}" />
+</head>
+<body>    
+    <header>
+        {% if data.name %}
+        <a href="#" class="logo">Welcome {{data.name}}</a>
+        {% else %}
+        <a href="#" class="logo">Welcome Guest</a>
+        {% endif %}
+          <nav class="navbar">
+              <a href="/">Home</a>
+              <a href="/news">Daily Eagle</a>
+              <a href="/lawyers"class="active">Better call Saul</a>
+              <a href="#Legal_Doc_Templates">Legal Doc Templates</a>
+              
+              {% if data.name %}
+              <a href="/logout"class="login_btn">Logout</a>  
+              {% else %}
+              <a href="/login"class="login_btn">Login</a>  
+              {% endif %}
+          </nav>
+      </header>
+    <div class="container">
+      <div class="header">
+        <div class="img-area">
+            {% set img_src = "assets/"+lawyer_details[1]+".jpg" %}
+            <img src="{{url_for('static', filename=img_src)}}">
+        </div>
+        <h1>{{lawyer_details[1]}}</h1>
+        <h3>{{lawyer_details[2]}}</h3>
+      </div>
+      <div class="main">
+        <div class="left">
+          <h2>Personal Information</h2>
+          <p><strong>Name:</strong> {{lawyer_details[1]}}</p>
+          <p><strong>Experience:</strong> {{lawyer_details[3]}}</p>
+          <p><strong>Email:</strong> {{lawyer_details[4]}}</p>
+          <p><strong>Phone:</strong> {{lawyer_details[5]}}</p>
+          <p><strong>Consultation fee:</strong> {{lawyer_details[9]}} INR</p>
+          <div class="education">
+          <h2>Education</h2>
+          <ul>
+            {% for degree in lawyer_details[7].split('. ') %}
+            <li><h3>{{degree}}</h3></li>
+            {% endfor %}
+          </ul>  
+        </div>
+          <div class="contact">
+          <h2>Contact Info</h2>
+          <ul>
+         <li><h3>Email : {{lawyer_details[4]}}</h3></li>
+         <li><h3>Phone Number : {{lawyer_details[5]}}</h3></li>
+          </ul>
+         </div> 
+        </div>
+        
+        <div class="right">
+          <h2>Description</h2>
+          <ul>
+            {% for degree in lawyer_details[8].split('. ') %}
+          <li><h3>{{degree}}</h3></li>
+          {% endfor %}  
+          </ul> <br>
+        </div>
+      </div>
+    </div> 
+
+</body>
+</html>
+

@@ -20,7 +20,7 @@
               <nav class="navbar">
                   <a href="/">Home</a>
                   <a href="#News_Hub"class="active">Daily Eagle</a>
-                  <a href="#Lawyers_for_hire">Better call Saul</a>
+                  <a href="/lawyers">Better call Saul</a>
                   <a href="#Legal_Doc_Templates">Legal Doc Templates</a>
                   
                   {% if data.name %}
@@ -74,6 +74,6 @@
         {{ pagination.links }}
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
           <script src="{{url_for('static', filename='js/news.js')}}"></script>
-          <!-- <script src="{{url_for('static', filename='js/pagination.js')}}"></script> -->
+          
         </body>
 </html>

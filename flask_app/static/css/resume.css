@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=isocpeurregular:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=isocpeurregular:wght@300&display=swap');
+:root{
+  --black:var(--bg);
+  --bg:#010103;
+  --border:.1rem solid rgba(255,255,255,.3);
+  --main_color:#80FF44;
+}
+* {
+	margin: 0;
+	font-family: 'isocpeurregular', sans-serif;
+}
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* gap: 30px; */
+}
+header {
+    position: sticky;
+    background-color: rgb(20, 22, 23) !important;
+    top: 0;
+    left: 0;
+    right:0;
+    padding: 20px 10px;
+    border-bottom: var(--border);
+    background: #1b1b1b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+.logo {
+    font-size: 25px;
+    color: var(--main_color);
+    text-shadow: 0 0 5px var(--main_color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.login_btn{
+  background-size:200%;
+  transition: 0.2s;
+  color:var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-size: 200%;
+  transition: 0.6s;
+  background-image: linear-gradient(to left,#24FE41,#FDFC47,#24FE41);
+}
+.login_btn:hover{
+  background-position: right;
+
+}
+.active{
+  color: var(--main_color);
+}
+nav a {
+
+    font-size: 1.3rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+nav a:hover,
+nav a.active {
+    color: var(--main_color);
+    text-shadow: 0 0 5px var(--main_color);
+    transition-delay: 1ms;
+    padding-bottom: .5rem;
+}
+nav a:nth-child(5):hover{
+  color:var(--black)
+}
+.container {
+	background: var(--bg) !important;
+	height: 1250px;
+	padding: 20px;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+.header {
+	text-align: center;
+}
+.header h1 {
+	margin-bottom: 10px;
+    font-size: 50px;
+}
+.header h3 {
+	text-transform: uppercase;
+	font-size: 25px;
+	font-weight: 500;
+}
+.img-area {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 25px auto;
+	border: 15px groove var(--main_color) !important;
+}
+.img-area img {
+	width: 100%;
+}
+.main {
+	display: flex;
+	flex-wrap: wrap;
+}
+.left {
+	flex: 1;
+	padding: 30px;
+}
+.left p {
+	line-height: 2;
+    font-size: 20px;
+}
+.left ul li {
+	line-height: 2;
+}
+.education h3
+{
+    font-size: 20px !important;
+}
+.contact h3
+{
+    font-size: 20px !important;
+}
+h2 {
+	background: var(--main_color) !important;
+	padding: 15px;
+	color: var(--bg) !important;
+	margin: 30px 0;
+	font-size: 25px;
+	border-radius: 0 50px 50px 0;
+}
+.right {
+	flex: 1;
+	padding: 30px;
+}
+.right h3 {
+	margin-bottom: 15px;
+}
+.right p {
+	line-height: 2.9;
+}
+.right ul li {
+	line-height: 2;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.container {
+		width: 95%;
+		height: auto;
+        background-color: var(--bg) !important;
+	}
+	h2 {
+		font-size: 18px;
+	}
+}
+@media screen and (max-width: 600px) {
+	.main {
+		flex-direction: column;
+	}
+	.left, .right {
+		flex: none;
+		width: 100%;
+	}
+	.container {
+		width: 95%;
+		height: auto;
+        background-color: var(--bg) !important;
+	}
+	h2 {
+		font-size: 15px;
+	}
+}

@@ -9,7 +9,7 @@ const filterArticles = () => {
     newsArticles.forEach(article => {
         const title = article.querySelector('.featured_title').textContent.toLowerCase();
         const body = article.querySelector('.featured_body').textContent.toLowerCase();
-        
+         
         if (title.includes(searchTerm) || body.includes(searchTerm)) {
             article.style.display = 'block';
         } else {

@@ -7,7 +7,7 @@
   --main_color:#80FF44;
 }
 body{
-  background: var(--bg);
+ 
   overflow-x: hidden !important;
 }
 *
@@ -21,14 +21,14 @@ body{
     
 }
 header {
-    position: fixed;
+    position: sticky;
+    background-color: rgb(20, 22, 23);
     top: 0;
     left: 0;
     right:0;
     width: 100%;
     padding: 0px 10px;
     border-bottom: var(--border);
-    background: #1b1b1b;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -245,11 +245,7 @@ img
     align-items: flex-start;
 }
 
-/* Search bar */
-.search_bar
-{
-    padding-top:5rem;
-}
+/* Search bar */    
 
 .search_container
 {
@@ -351,5 +347,6 @@ img
 .pagination{
     display: flex;
     justify-content: center;
-    margin: 45px;
+    padding: 45px;
+    margin: 0 !important;
 }

@@ -26,7 +26,6 @@ header {
     width: 100%;
     padding: 20px 10px;
     border-bottom: var(--border);
-    background: #1b1b1b;
     display: flex;
     justify-content: space-between;
     align-items: center;

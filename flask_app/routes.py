@@ -172,3 +172,41 @@ def news():
     pagination = Pagination(page=page, total=len(news_stories), search=search,per_page=6, record_name='news_stories')
 
     return render_template('news.html', data={'name': name}, news = news_stories,pagination=pagination, page = page, per_page = 6)
+
+@main.route('/lawyers')
+def lawyers():
+   user_id_cookie = request.cookies.get('user_id')
+   name=None
+   if user_id_cookie:
+     uidcookie=int(user_id_cookie)
+     username=connection.execute(f'SELECT username from users where userid= {uidcookie}')
+     if username:
+            name = username[0][0]
+     else:
+            redirect('/ logout')
+   else:
+        print("User is not logged in")
+
+   lawyers=connection.execute("Select * from lawyers")
+   return render_template('lawyers.html', data={'name': name},lawyers=lawyers)
+
+@main.route('/resume/<lawyer_id>')
+def resume(lawyer_id):
+   user_id_cookie = request.cookies.get('user_id')
+   name=None
+   if user_id_cookie:
+     uidcookie=int(user_id_cookie)
+     username=connection.execute(f'SELECT username from users where userid= {uidcookie}')
+     if username:
+            name = username[0][0]
+     else:
+            redirect('/ logout')
+   else:
+        print("User is not logged in")
+   lawyer_details=connection.execute(f'select * from lawyers where lawyer_id={lawyer_id}')
+   if lawyer_details:
+        lawyer_details = lawyer_details[0]
+        return render_template('resume.html',data={'name':name},lawyer_details=lawyer_details)
+   else:
+       return redirect('/not-found')
+ 
