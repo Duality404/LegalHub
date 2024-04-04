@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/doc.css' )}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='fonts/stylesheet.css' )}}">
+</head>
+
+<body>
+    <header>
+        {% if data.name %}
+        <a href="#" class="logo">Welcome {{data.name}}</a>
+        {% else %}
+        <a href="#" class="logo">Welcome Guest</a>
+        {% endif %}
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/news">Daily Eagle</a>
+            <a href="/lawyers">Better call Saul</a>
+            <a href="/documents" class="active">Legal Doc Templates</a>
+
+            {% if data.name %}
+            <a href="/logout" class="login_btn">Logout</a>
+            {% else %}
+            <a href="/login" class="login_btn">Login</a>
+            {% endif %}
+        </nav>
+
+    </header>
+    <div class="func">
+    <input class="search-bar" type="text" placeholder="Search here..." />
+    <div class="dropdown">
+        <div class="select">
+            <span class="selected">Category</span>
+            <div class="caret"></div>
+        </div>
+        <ul class="menu">
+            <li class="act">Finance</li>
+            <li>Bonds</li>
+            <li>Corporate/Business</li>
+            <li>Criminal</li>
+            <li>Family Law</li>
+            <li>Will</li>
+            <li>Trademark and Copyright</li>
+        </ul>
+    </div>
+    </div>
+    <div class="container">
+        {% for x in documents %}  
+        <div class="document">
+            
+            <div class="document_header">
+                <div class="document_header" style="justify-content: flex-start;">
+                    <img src="{{url_for('static', filename='assets/doc_icon.png')}}">
+                    <h3 class="doc-title">{{x[1]}}</h3>
+                </div>
+                <span class="tag">{{x[3]}}</span>
+            </div>
+            <p class="doc-desc">{{x[2]}}</p>
+            <div class="document_header" style="justify-content: flex-start;">
+                {% set doc_src = "documents/"+x[1]+".docx" %}
+                {% set docx_src = x[1]+".docx" %}
+                <a href="{{url_for('static', filename=doc_src)}}" class="preview-btn" target="_blank">Preview</a>
+                <a href="{{url_for('static', filename=doc_src)}}" class="download-btn" download="{{docx_src}}">Download</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="{{url_for('static', filename='js/documents.js')}}"></script>
+</body>
+
+</html>

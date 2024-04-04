@@ -7,10 +7,7 @@
     --main_color:#80FF44;
   }
   *{
-    
-    
     padding: 0;
-
     scroll-behavior: smooth;
     font-family: 'isocpeurregular', sans-serif;
     transition: .2s linear;  

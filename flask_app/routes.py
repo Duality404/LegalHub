@@ -209,4 +209,20 @@ def resume(lawyer_id):
         return render_template('resume.html',data={'name':name},lawyer_details=lawyer_details)
    else:
        return redirect('/not-found')
+
+@main.route('/documents')
+def documents():
+ user_id_cookie = request.cookies.get('user_id')
+ name=None
+ if user_id_cookie:
+     uidcookie=int(user_id_cookie)
+     username=connection.execute(f'SELECT username from users where userid= {uidcookie}')
+     if username:
+            name = username[0][0]
+     else:
+            redirect('/ logout')
+ else:
+        print("User is not logged in")
+ documents=connection.execute('Select * from documents')
+ return render_template('documents.html',data={'name':name},documents=documents)
  

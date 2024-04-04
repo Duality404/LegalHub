@@ -25,7 +25,7 @@
             <a href="/">Home</a>
             <a href="/news">Daily Eagle</a>
             <a href="#Lawyers_for_hire"class="active">Better call Saul</a>
-            <a href="#Legal_Doc_Templates">Legal Doc Templates</a>
+            <a href="/documents">Legal Doc Templates</a>
             
             {% if data.name %}
             <a href="/logout"class="login_btn">Logout</a>  
@@ -37,7 +37,6 @@
     <div class="main">
       <div class="jobs-list-container">
         <input class="job-search" type="text" placeholder="Search here..." />
-        
         <div class="jobs">
           {% for x in lawyers %}
             <div class="job">

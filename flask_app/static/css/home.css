@@ -41,7 +41,7 @@ header {
 .login_btn{
   background-size:200%;
   transition: 0.2s;
-  color:var(--black);
+  color:var(--black) !important;
   padding: 0.5rem 1rem;
   font-size: 1.3rem;
   border: none;
