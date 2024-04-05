@@ -225,4 +225,17 @@ def documents():
         print("User is not logged in")
  documents=connection.execute('Select * from documents')
  return render_template('documents.html',data={'name':name},documents=documents)
+
+@main.route('/iframe/<doc_id>')
+def iframe(doc_id):
+   
+   doc_path=connection.execute(f'select title from documents where id={doc_id}')
+   print(doc_path)
+   if doc_path:
+        doc_path = doc_path[0][0]
+        print(doc_path)
+        return render_template('iframe.html',doc_path=doc_path)
+   else:
+       return redirect('/not-found')
+
  

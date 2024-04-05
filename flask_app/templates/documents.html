@@ -61,8 +61,8 @@
             <p class="doc-desc">{{x[2]}}</p>
             <div class="document_header" style="justify-content: flex-start;">
                 {% set doc_src = "documents/"+x[1]+".docx" %}
-                {% set docx_src = x[1]+".docx" %}
-                <a href="{{url_for('static', filename=doc_src)}}" class="preview-btn" target="_blank">Preview</a>
+                {% set pdf_src = "documents/"+x[1]+".pdf" %}
+                <a target="_blank" href="/iframe/{{x[0]}}" class="preview-btn">Preview</a>
                 <a href="{{url_for('static', filename=doc_src)}}" class="download-btn" download="{{docx_src}}">Download</a>
             </div>
         </div>
