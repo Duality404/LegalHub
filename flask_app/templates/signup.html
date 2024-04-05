@@ -5,6 +5,7 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Login and Registration form</title>
     <link rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/login.css' )}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='fonts/stylesheet.css' )}}">
 </head>
 <body>
     <div class = "container">
@@ -35,7 +36,7 @@
             </div>
             {% with messages = message %}
                 {% if messages %}
-                    <ul class=flashes style = "list-style: none;">
+                    <ul class=flashes style="list-style: none; padding: 10px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px;">
                     {% for message in messages %}
                     <li>{{ message }}</li>
                     {% endfor %}

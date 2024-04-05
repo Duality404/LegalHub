@@ -81,13 +81,17 @@ nav a.active {
 nav a:nth-child(5):hover{
   color:var(--black)
 }   
+.main
+{
+    background-color: var(--bg) !important;
+}
 .func
 {
     display: flex;
     flex-direction: row;
     padding-top: 20px;
     padding-left: 20px;
-    justify-content: space-between;
+    justify-content: center;
 
 }
 .search-bar
@@ -187,6 +191,11 @@ nav a:nth-child(5):hover{
 h1 {
     text-align: center;
 }
+.document > div{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
 .document {
     box-shadow: 0 4px 24px -3px #80FF44;    
     margin-bottom: 20px;
@@ -197,12 +206,18 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    justify-content: space-between;
 }
 .document_header{
+    color:#fff;
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
     gap: 10px;
     justify-content: space-between;
+}
+.doc-desc
+{
+    color: #fff;
 }
 .document:hover{
     transform: scale(1.03);

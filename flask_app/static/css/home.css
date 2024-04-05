@@ -19,7 +19,8 @@ body{
     transition: .2s linear;  
 }
 header {
-    position: fixed;
+    position: sticky;
+    background-color: rgb(20, 22, 23);
     top: 0;
     left: 0;
     right:0;

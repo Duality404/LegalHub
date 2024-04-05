@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const specialization = job.querySelector('.job-specialization').textContent.toLowerCase();
 
             if (title.includes(searchTerm) || specialization.includes(searchTerm)) {
-                job.style.display = 'block';
+                job.style.display = 'flex';
             } else {
                 job.style.display = 'none';
             }

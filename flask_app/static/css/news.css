@@ -181,7 +181,7 @@ img
 .featured_thumbnail
 {
     border-radius: 5rem 0;
-    border: 1rem solid #fff;
+    border: 1rem solid var(--main_color);
     overflow:hidden;
     margin-bottom: 1rem;
     width: 390px;
@@ -251,14 +251,14 @@ img
 {
     position : relative;
     width:30rem;
-    background:#fff;
+    background:#333;
     display:flex;
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
     padding: 0.6rem 1rem;
     border-radius:0.5rem;
-    color: #000; 
+    color: #fff; 
    
 }
 
@@ -280,13 +280,14 @@ img
 }
 .search_bar input:focus
 {
+    color:#fff;
     outline: none !important;
-    border: none !important;
+
 }
 
 .search_bar input::placeholder
 {
-    color:#000;
+    color:#fff;
     font-style: italic;
     font-size: 18px;
     font-weight: bold;

@@ -57,6 +57,7 @@ def register_post():
     password=request.form.get('password')
     data=connection.execute('select * from users')
     dup=0
+    dup2=0
     for x in data:
         if x[1]==user_name:
             dup=1
@@ -64,12 +65,19 @@ def register_post():
     if dup==1:
         flash('Choose a different username please')
         return redirect('/signup')
+    for x in data:
+        if x[4]==email:
+            dup2=1
+            break
+    if dup2==1:
+        flash('Email already exists please sign in')
+        return redirect('/signup')
     if dup==0:
         if is_valid_email(email)==False:
             flash('Please specify a valid email address.')
             return redirect('/signup')  
         if is_strong_password(password)==False:
-            flash('Password must be atleast of 8 characters and must contain one digit,uppercase character,lowercase character and a special character')
+            flash('Password should be of 8 characters minimum with one of special,lower and upper characters and number')
             return redirect('/signup')
         if is_valid_email(email) and is_strong_password(password):
             connection.execute(f"INSERT into users(username,firstname,lastname,email,password)values('{user_name}','{fname}','{lname}','{email}','{password}')")
@@ -137,6 +145,77 @@ def login_post():
     else:
         print('redirecting to login')
         return redirect('/login')
+
+
+@main.route('/forgot')
+def forgot():
+    message = None
+    try:
+        message = get_flashed_messages()
+        print(message)
+    except:
+        pass
+    return render_template('forgot.html',message=message)
+    
+@main.route('/forgot', methods = ["POST"])
+def forgot_post():
+    # extract data from form
+    email= request.form.get('email')
+    password=request.form.get('new-password')
+    conf=request.form.get('confirm-password')
+    # authenticate
+    uid=0
+    user_found=0
+    email_flag=1
+    strong=1
+    password_correct=1
+    data= connection.execute('select * from users')
+    
+    if is_valid_email(email)==False:
+        email_flag=0
+        flash('Email is of invalid format')     
+        return redirect('/forgot')
+
+    if email_flag==1:
+     for x in data:
+         if x[4]==email:
+             user_found=1
+             uid=x[0]
+            
+    if user_found== 0:
+     flash('Email is incorrect')
+     return redirect('/forgot')
+    
+    if is_strong_password(password)==False:
+        strong=0
+        flash('Password should be of 8 characters minimum with one of special,lower and upper characters and number') 
+        return redirect('/forgot')
+    
+    
+    if strong==1:
+     if password!=conf:
+         password_correct=0
+         flash("Passwords don't match")
+         return redirect('/forgot')
+    
+    if user_found==1 and password_correct==1:
+        connection.execute(f"update users set password='{password}' where userid={uid} ")
+        flash("Password updated succesfully")
+        return redirect('/login')
+    
+def is_strong_password(password):
+    return all([
+        len(password) >= 8,
+        re.search(r'[A-Z]', password),
+        re.search(r'[a-z]', password),
+        re.search(r'\d', password),
+        re.search(r'[!@#$%^&*()\-_=+{};:,<.>]', password)
+    ])
+
+def is_valid_email(email):
+    
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return re.match(pattern, email) is not None
 
 
 @main.route('/logout')

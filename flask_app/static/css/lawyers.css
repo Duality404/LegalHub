@@ -16,6 +16,9 @@
     margin: 0px;
     height: 100%;
     overflow-x: hidden;
+    background: black;
+    overflow-x: hidden;
+    min-height: 100vh !important;
   }
   header {
     position: sticky;
@@ -142,27 +145,28 @@ nav a:nth-child(5):hover{
     font-size: 20px;
     padding: 10px 0;
     margin: 0;
-    color: #023047;
+    color: var(--main_color);
   }
   
   .jobs-list-container .details {
     margin-top: 6px;
     font-size: 16px;
-    color: #333;
+    color: #fff;
     line-height: 1.5;
     flex: 1;
   }  
   .jobs-list-container .job-search {
+    background-color: #333; 
+    color:#fff;  
+    border: none;
     width: 50%;
     padding: 9px 8px;
     font-size: 18px;
     font-family: "isocpeurregular", sans-serif;
     box-sizing: border-box;
-    border: 1px solid #333;
     border-radius: 8px;
     align-self: center;
   }
-  
   @media (max-width: 940px) {
     .jobs-list-container .jobs {
       grid-template-columns: 1fr 1fr;
@@ -196,7 +200,7 @@ nav a:nth-child(5):hover{
   }
   .jobs-list-container .details-btn:hover {
     transition-delay: 0s, 1s;
-    color: #fff;
+    color: var(--black);
     box-shadow:
         0 0 10px var(--main_color),
         0 0 20px var(--main_color),

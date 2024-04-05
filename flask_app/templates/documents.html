@@ -29,9 +29,10 @@
         </nav>
 
     </header>
+    <div class="main">
     <div class="func">
     <input class="search-bar" type="text" placeholder="Search here..." />
-    <div class="dropdown">
+    <!-- <div class="dropdown">
         <div class="select">
             <span class="selected">Category</span>
             <div class="caret"></div>
@@ -45,20 +46,21 @@
             <li>Will</li>
             <li>Trademark and Copyright</li>
         </ul>
-    </div>
+    </div> -->
     </div>
     <div class="container">
         {% for x in documents %}  
         <div class="document">
-            
-            <div class="document_header">
-                <div class="document_header" style="justify-content: flex-start;">
-                    <img src="{{url_for('static', filename='assets/doc_icon.png')}}">
-                    <h3 class="doc-title">{{x[1]}}</h3>
+            <div>
+                <div class="document_header">
+                    <div class="document_header" style="justify-content: flex-start;">
+                        <img src="{{url_for('static', filename='assets/doc_icon.png')}}">
+                        <h3 class="doc-title">{{x[1]}}</h3>
+                    </div>
+                    <span class="tag">{{x[3]}}</span>
                 </div>
-                <span class="tag">{{x[3]}}</span>
+                <p class="doc-desc">{{x[2]}}</p>
             </div>
-            <p class="doc-desc">{{x[2]}}</p>
             <div class="document_header" style="justify-content: flex-start;">
                 {% set doc_src = "documents/"+x[1]+".docx" %}
                 {% set pdf_src = "documents/"+x[1]+".pdf" %}
@@ -68,6 +70,7 @@
         </div>
         {% endfor %}
     </div>
+</div>
     <script src="{{url_for('static', filename='js/documents.js')}}"></script>
 </body>
 

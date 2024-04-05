@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Login and Registration form</title>
-    <link rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/login.css' )}}">
+    <link rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/forgot.css' )}}">
     <link rel="stylesheet" href="{{url_for('static', filename='fonts/stylesheet.css' )}}">
 </head>
 <body>
@@ -13,14 +13,18 @@
         <span></span>
         <span></span>
 
-        <form id="signinform" action="/login" method = "POST">
-            <h2>Login</h2>
+        <form id="signinform" action="/forgot" method = "POST">
+            <h2>Forgot Password</h2>
             <div class = "inputBox">
-                <input name="username" id="username" type = "text" placeholder="Username" required>
+                <input name="email" id="email" type = "text" placeholder="Email" required>
             </div>
 
             <div class = "inputBox">
-                <input name="password" id="password" type = "password" placeholder="Password" required>
+                <input name="new-password" id="new-password" type = "password" placeholder="New Password" required>
+            </div>
+            
+            <div class = "inputBox">
+                <input name="confirm-password" id="confirm-password" type = "password" placeholder="Confirm Password" required>
             </div>
 
             {% with messages = message %}
@@ -33,13 +37,9 @@
                 {% endif %}
             {% endwith %}
 
-            <div class = "inputBox group" style="display: flex; gap: 10px;">
-                <a href="/forgot">Forgot Password? </a>
-                <a href="/signup" id="signup">Signup</a>
-            </div>
 
             <div class = "inputBox">
-                <input type = "submit" value="Sign in">
+                <input type = "submit" value="Update">
             </div>  
         </form>
         
