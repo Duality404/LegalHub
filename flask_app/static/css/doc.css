@@ -11,9 +11,12 @@
 	font-family: 'isocpeurregular', sans-serif;
 }
 body {
+    background-color: var(--bg);
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    min-height: 100vh !important;
     /* gap: 30px; */
 }
 header {
