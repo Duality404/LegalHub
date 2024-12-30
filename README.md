@@ -1,54 +1,64 @@
+# LegalHub ⚖️
 
-<h1 align="center" style="font-weight: bold;">LegalHub⚖️</h1>
+LegalHub is a web application developed as a fourth-semester project, aiming to create a scalable and centralized platform for all things legal. It integrates various technologies to provide users with a comprehensive legal resource hub.
 
-<p align="center">
-<a href="#tech">Technologies</a>
-<a href="#started">Getting Started</a>
-<a href="#colab">Collaborators</a>
-<a href="#contribute">Contribute</a> 
-</p>
+## Table of Contents
 
+1. [Features](#features)
+2. [Technologies Used](#technologies-used)
+3. [Installation](#installation)
+4. [Usage](#usage)
 
+## Features
 
-<p align="center">A simple web application that served as my fourth semester project, this project aimed at creating a scalable and centralized platform for all things legal.</p>
+- **Centralized Legal Resources**: Access a wide range of legal documents and information in one place.
+- **User-Friendly Interface**: Navigate through legal content with ease.
+- **Scalability**: Designed to accommodate a growing repository of legal resources.
 
+## Technologies Used
 
+- **Frontend**:
+  - HTML
+  - CSS
+  - JavaScript
+- **Backend**:
+  - Python
+  - Flask
+- **Database**:
+  - MySQL
 
-<h2 id="layout">🎨 Layout</h2>
+## Installation
 
-<p align="center">
+1. **Clone the Repository**:
 
-![ss1](https://github.com/user-attachments/assets/4c2900c7-8cff-48c6-bbcc-f4056198ab95)
-![ss2](https://github.com/user-attachments/assets/4d9ebadd-d464-4dc3-908d-0784c4a43774)
-![ss3](https://github.com/user-attachments/assets/9fe13747-a8e7-43c4-a221-19a4f186716a)
-![ss4](https://github.com/user-attachments/assets/01c70b4e-ad3c-4f66-b701-358be511ea81)
-![ss5](https://github.com/user-attachments/assets/366e107d-5662-4782-a7cd-433764379cb0)
+   ```bash
+   git clone https://github.com/Duality404/LegalHub.git
+   cd LegalHub
+   ```
 
+2. **Set Up Virtual Environment** (Optional but recommended):
 
-</p>
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-<h2 id="technologies">💻 Technologies</h2>
+3. **Install Dependencies**:
 
-- HTML
-- CSS
-- JavaScript
-- MySQL
-- Python
-- Flask
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-<h3>Cloning</h3>
+4. **Configure the Database**:
 
-How to clone your project
+   - Ensure MySQL is installed and running.
+   - Create a database named `legalhub`.
+   - Update the database configuration in `config.py` with your MySQL credentials.
 
-```bash
-git clone https://github.com/Duality404/LegalHub.git
-```
+## Usage
 
-<h3>Starting</h3>
+1. **Start the Application**:
 
-How to start your project
-
-```bash
-cd LegalHub
-python -m run
-```
+   ```bash
+   python -m run
+   ```
