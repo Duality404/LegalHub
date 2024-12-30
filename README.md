@@ -43,12 +43,6 @@ LegalHub is a web application developed as a fourth-semester project, aiming to 
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. **Install Dependencies**:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
 4. **Configure the Database**:
 
    - Ensure MySQL is installed and running.
